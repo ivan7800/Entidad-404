@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Entidad 404">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="70%">
+      <stop offset="0%" stop-color="#0b1420"></stop>
+      <stop offset="100%" stop-color="#05070a"></stop>
+    </radialGradient>
+    <radialGradient id="core" cx="42%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#8be9ff"></stop>
+      <stop offset="45%" stop-color="#39b7c9"></stop>
+      <stop offset="100%" stop-color="#1b6b7a"></stop>
+    </radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5ad1c9"></stop>
+      <stop offset="100%" stop-color="#c95ab0"></stop>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#bg)"></rect>
+
+  
+  <circle cx="256" cy="256" r="150" fill="none" stroke="url(#ring)" stroke-width="10" opacity="0.55"></circle>
+  <circle cx="256" cy="256" r="176" fill="none" stroke="#22303c" stroke-width="4" stroke-dasharray="6 10" opacity="0.7"></circle>
+
+  
+  <circle cx="256" cy="252" r="96" fill="url(#core)"></circle>
+  <ellipse cx="224" cy="212" rx="34" ry="22" fill="#eafcff" opacity="0.35"></ellipse>
+
+  
+  <circle cx="228" cy="250" r="15" fill="#eafcff"></circle>
+  <circle cx="284" cy="250" r="15" fill="#eafcff"></circle>
+  <circle cx="230" cy="252" r="7.5" fill="#08121a"></circle>
+  <circle cx="286" cy="252" r="7.5" fill="#08121a"></circle>
+  <path d="M236 288 q20 18 40 0" fill="none" stroke="#08121a" stroke-width="7" stroke-linecap="round"></path>
+
+  
+  <rect x="150" y="330" width="60" height="10" fill="#c95ab0" opacity="0.85"></rect>
+  <rect x="300" y="176" width="46" height="8" fill="#5ad1c9" opacity="0.85"></rect>
+
+  
+  <text x="256" y="440" text-anchor="middle" font-family="ui-monospace, monospace" font-size="46" fill="#3f5563" letter-spacing="6">404</text>
+</svg>

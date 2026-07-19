@@ -1,0 +1,26 @@
+/* ENTIDAD 404 — responsive */
+
+/* Móvil estrecho */
+@media (max-width: 380px) {
+  main#screen-root { padding-left: var(--sp-3); padding-right: var(--sp-3); }
+  .action-grid { grid-template-columns: repeat(4, 1fr); }
+  .habitat { min-height: 250px; }
+}
+
+/* Horizontal en móvil: hábitat a la izquierda, acciones a la derecha */
+@media (max-height: 480px) and (orientation: landscape) {
+  .home-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--sp-3); align-items: start; }
+  .habitat { min-height: 210px; }
+  main#screen-root { padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* Escritorio amplio: hábitat grande + panel lateral */
+@media (min-width: 900px) {
+  .home-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--sp-4); align-items: start; }
+  .habitat { min-height: 420px; }
+}
+
+/* Pantallas muy grandes */
+@media (min-width: 1400px) {
+  main#screen-root { max-width: 1120px; }
+}

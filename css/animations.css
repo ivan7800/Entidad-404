@@ -1,0 +1,244 @@
+/* ENTIDAD 404 — animaciones */
+
+/* Respiración de la criatura (aplicada al grupo <g> del cuerpo) */
+@keyframes breathe {
+  0%, 100% { transform: scaleY(1) translateY(0); }
+  50% { transform: scaleY(1.035) translateY(-1.5px); }
+}
+.anim-breathe { animation: breathe 3.4s ease-in-out infinite; transform-origin: 50% 100%; transform-box: fill-box; }
+.anim-breathe.sleepy { animation-duration: 5.5s; }
+
+/* Flotación (huevos, formas espectrales) */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+.anim-float { animation: float 4s ease-in-out infinite; }
+
+/* Salto de felicidad */
+@keyframes hop {
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-16px) scaleY(1.05); }
+  55% { transform: translateY(0) scaleY(0.92); }
+  70% { transform: translateY(-6px); }
+}
+.anim-hop { animation: hop 0.9s var(--ease-out) 2; transform-origin: 50% 100%; transform-box: fill-box; }
+
+/* Sacudida (enfado / rechazo) */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-5px) rotate(-2deg); }
+  40% { transform: translateX(5px) rotate(2deg); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+.anim-shake { animation: shake 0.5s ease-in-out 2; transform-box: fill-box; transform-origin: center; }
+
+/* Tristeza: caída suave */
+@keyframes droop {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  50% { transform: translateY(3px) scaleY(0.97); }
+}
+.anim-droop { animation: droop 4.5s ease-in-out infinite; transform-origin: 50% 100%; transform-box: fill-box; }
+
+/* Comer: pequeños mordiscos */
+@keyframes chomp {
+  0%, 100% { transform: scaleY(1); }
+  25% { transform: scaleY(0.9); }
+  50% { transform: scaleY(1.03); }
+  75% { transform: scaleY(0.93); }
+}
+.anim-chomp { animation: chomp 0.45s ease-in-out 4; transform-origin: 50% 100%; transform-box: fill-box; }
+
+/* Caricia: ronroneo lateral */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-4deg); }
+  75% { transform: rotate(4deg); }
+}
+.anim-wiggle { animation: wiggle 0.8s ease-in-out 3; transform-box: fill-box; transform-origin: 50% 90%; }
+
+/* Evolución */
+@keyframes evolve-flash {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.evolve-flash {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 60%, var(--accent) 0%, transparent 65%);
+  animation: evolve-flash 1.6s ease-out forwards;
+  pointer-events: none;
+}
+
+/* Zzz de sueño */
+@keyframes zzz {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.7); }
+  30% { opacity: 1; }
+  100% { opacity: 0; transform: translate(14px, -26px) scale(1.15); }
+}
+.zzz { animation: zzz 2.6s ease-out infinite; }
+.zzz:nth-child(2) { animation-delay: 0.9s; }
+.zzz:nth-child(3) { animation-delay: 1.8s; }
+
+/* Parpadeo de ojos: controlado por JS alternando clase */
+.eyes-closed .eye-open { display: none; }
+.eyes-closed .eye-closed { display: initial; }
+.eye-closed { display: none; }
+
+/* Partículas ambientales */
+@keyframes drift-up {
+  from { transform: translateY(0); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  to { transform: translateY(-260px); opacity: 0; }
+}
+.particle {
+  position: absolute; bottom: 20%;
+  width: 3px; height: 3px; border-radius: 50%;
+  background: var(--particle-color);
+  animation: drift-up linear infinite;
+  pointer-events: none;
+}
+
+/* Glitch discreto */
+@keyframes glitch-shift {
+  0%, 92%, 100% { transform: none; opacity: 1; filter: none; }
+  93% { transform: translateX(2px); filter: hue-rotate(18deg); }
+  95% { transform: translateX(-2px) skewX(1deg); }
+  97% { transform: none; opacity: 0.9; }
+}
+.fx-glitch { animation: glitch-shift 9s steps(1) infinite; }
+
+/* Pulso de indicadores */
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+.pulse { animation: pulse-dot 1.6s ease-in-out infinite; }
+
+/* Incubación */
+@keyframes egg-crack {
+  0%, 100% { transform: rotate(0); }
+  20% { transform: rotate(-3deg); }
+  40% { transform: rotate(3deg); }
+  60% { transform: rotate(-2deg); }
+  80% { transform: rotate(2deg); }
+}
+.anim-crack { animation: egg-crack 0.7s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 90%; }
+
+/* Terminal de arranque */
+@keyframes cursor-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+.term-cursor { animation: cursor-blink 1s steps(1) infinite; }
+
+/* ── v2.1.0: nuevas animaciones transitorias ── */
+
+/* Celebración: salto con brillo (curación, cumpleaños, récord) */
+@keyframes celebrate {
+  0% { transform: translateY(0) scale(1); filter: none; }
+  25% { transform: translateY(-14px) scale(1.06); filter: brightness(1.35) saturate(1.2); }
+  50% { transform: translateY(0) scale(0.97); }
+  70% { transform: translateY(-8px) scale(1.04); filter: brightness(1.2); }
+  100% { transform: translateY(0) scale(1); filter: none; }
+}
+.anim-celebrate { animation: celebrate 1.3s var(--ease-out, ease-out) 1; transform-box: fill-box; transform-origin: 50% 100%; }
+
+/* Tiritona: enfermedad o mal sueño */
+@keyframes shiver {
+  0%, 100% { transform: translateX(0); }
+  10% { transform: translateX(-1.5px) rotate(-0.6deg); }
+  30% { transform: translateX(1.5px) rotate(0.6deg); }
+  50% { transform: translateX(-1px); }
+  70% { transform: translateX(1px) rotate(-0.4deg); }
+  90% { transform: translateX(-0.5px); }
+}
+.anim-shiver { animation: shiver 0.35s linear 5; transform-box: fill-box; transform-origin: center; }
+
+/* Golpe de glitch: eventos anómalos (una sola pasada, distinto del fx-glitch ambiental) */
+@keyframes glitch-hit {
+  0%, 100% { transform: none; filter: none; opacity: 1; }
+  15% { transform: translateX(3px) skewX(2deg); filter: hue-rotate(35deg); }
+  30% { transform: translateX(-3px); opacity: 0.85; }
+  45% { transform: translateX(1.5px) skewX(-1deg); filter: hue-rotate(-25deg) saturate(1.4); }
+  60% { transform: none; opacity: 0.92; }
+}
+.anim-glitch-hit { animation: glitch-hit 0.9s steps(2) 1; transform-box: fill-box; transform-origin: center; }
+
+/* Asentimiento: charla */
+@keyframes nod {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(3deg) translateY(1px); }
+  55% { transform: rotate(-2deg); }
+  80% { transform: rotate(1.5deg) translateY(0.5px); }
+}
+.anim-nod { animation: nod 0.9s ease-in-out 1; transform-box: fill-box; transform-origin: 50% 85%; }
+
+/* ── Idle por familia: sutil, continuo, se aplica al grupo .creature-body ── */
+.creature-body { transform-box: fill-box; transform-origin: 50% 100%; }
+
+/* Prisma: destello, breve rotación como si atrapara luz */
+@keyframes idle-prisma {
+  0%, 100% { transform: scaleY(1) rotate(0); filter: brightness(1); }
+  50% { transform: scaleY(1.03) rotate(1.2deg); filter: brightness(1.08); }
+}
+.idle-prisma { animation: idle-prisma 3.2s ease-in-out infinite; }
+
+/* Ferrita: peso, oscilación lenta y corta */
+@keyframes idle-ferrita {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(1px) rotate(-0.6deg); }
+}
+.idle-ferrita { animation: idle-ferrita 4.6s ease-in-out infinite; }
+
+/* Abisal: flotación acuática, lenta y amplia */
+@keyframes idle-abisal {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-9px) rotate(-1.5deg); }
+}
+.idle-abisal { animation: idle-abisal 5.2s ease-in-out infinite; }
+
+/* Espectral: flota y se desvanece un poco, como un umbral */
+@keyframes idle-espectral {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-6px); opacity: 0.82; }
+}
+.idle-espectral { animation: idle-espectral 4s ease-in-out infinite; }
+
+/* Botánica: balanceo como planta al viento */
+@keyframes idle-botanica {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(2deg); }
+  75% { transform: rotate(-2deg); }
+}
+.idle-botanica { animation: idle-botanica 3.8s ease-in-out infinite; }
+
+/* Astral: leve órbita/inclinación, como si girase con las estrellas */
+@keyframes idle-astral {
+  0%, 100% { transform: rotate(0) translateY(0); }
+  33% { transform: rotate(1.5deg) translateY(-3px); }
+  66% { transform: rotate(-1.5deg) translateY(-1px); }
+}
+.idle-astral { animation: idle-astral 6s ease-in-out infinite; }
+
+/* Mecánica: tic-tac, movimiento breve y regular */
+@keyframes idle-mecanica {
+  0%, 92%, 100% { transform: rotate(0); }
+  4% { transform: rotate(2deg); }
+  8% { transform: rotate(0); }
+}
+.idle-mecanica { animation: idle-mecanica 2.4s steps(1) infinite; }
+
+/* Glitch: tartamudeo digital ocasional */
+@keyframes idle-glitch {
+  0%, 90%, 100% { transform: none; filter: none; opacity: 1; }
+  91% { transform: translateX(2px); filter: hue-rotate(20deg); opacity: 0.9; }
+  93% { transform: translateX(-2px); }
+  95% { transform: none; opacity: 1; }
+}
+.idle-glitch { animation: idle-glitch 5s steps(1) infinite; }
+
+/* Giro de juego: victoria en simulaciones */
+@keyframes spin-play {
+  0% { transform: rotate(0) scale(1); }
+  55% { transform: rotate(360deg) scale(1.08); }
+  75% { transform: rotate(360deg) scale(0.96); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+.anim-spin-play { animation: spin-play 1.1s var(--ease-out, ease-out) 1; transform-box: fill-box; transform-origin: center; }

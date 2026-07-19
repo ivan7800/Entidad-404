@@ -1,0 +1,80 @@
+/* ============================================================
+   ENTIDAD 404 — U404 Bio-Terminal · Design tokens
+   Tipografía local (sin fuentes remotas): pila mono del sistema
+   para identidad terminal + sans del sistema para lectura.
+   ============================================================ */
+:root {
+  /* Tipografía */
+  --font-display: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --fs-xs: 0.72rem;
+  --fs-sm: 0.84rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.6rem;
+  --fs-2xl: 2.1rem;
+  --lh-tight: 1.15;
+  --lh-body: 1.55;
+  --ls-wide: 0.14em;
+
+  /* Escala de espacio */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+
+  /* Radios y bordes */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --border-w: 1px;
+
+  /* Elevación (cristal oscuro) */
+  --shadow-1: 0 1px 2px rgba(0,0,0,.5), 0 4px 14px rgba(0,0,0,.35);
+  --shadow-2: 0 2px 6px rgba(0,0,0,.55), 0 12px 34px rgba(0,0,0,.45);
+  --shadow-inner: inset 0 1px 0 rgba(255,255,255,.05), inset 0 -1px 0 rgba(0,0,0,.4);
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(.22,.9,.32,1);
+  --dur-fast: 140ms;
+  --dur-med: 280ms;
+  --dur-slow: 600ms;
+
+  /* Tamaño táctil mínimo */
+  --touch-min: 44px;
+
+  /* Z-index */
+  --z-nav: 40;
+  --z-modal: 60;
+  --z-toast: 80;
+
+  /* ---- Tema base (U404 OLED) — sobrescrito por themes.css ---- */
+  --bg-0: #060709;
+  --bg-1: #0b0d11;
+  --panel: rgba(18, 21, 27, 0.82);
+  --panel-solid: #12151b;
+  --panel-border: rgba(120, 140, 170, 0.16);
+  --text-1: #e8ecf2;
+  --text-2: #9aa4b5;
+  --text-3: #5f6979;
+  --accent: #6ee7d8;
+  --accent-strong: #2dd4bf;
+  --accent-contrast: #04211d;
+  --accent-2: #a78bfa;
+  --danger: #f87171;
+  --warn: #fbbf24;
+  --ok: #4ade80;
+  --glow: rgba(110, 231, 216, 0.28);
+  --focus-ring: #7ff5e6;
+  --habitat-sky: linear-gradient(180deg, #0a0f14 0%, #0d141d 60%, #101a24 100%);
+  --habitat-floor: #131a22;
+  --scanline-opacity: 0.05;
+  --particle-color: rgba(110, 231, 216, 0.5);
+  --bar-track: rgba(255,255,255,0.07);
+  --btn-bg: rgba(255,255,255,0.045);
+  --btn-bg-hover: rgba(255,255,255,0.09);
+}

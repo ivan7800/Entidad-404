@@ -1,0 +1,20 @@
+{
+  "name": "entidad-404-digital-creature-simulator",
+  "version": "2.1.0",
+  "description": "Entidad 404 — Digital Creature Simulator. PWA premium, local, offline y preparada para GitHub Pages.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test --test-concurrency=1",
+    "test:integration": "node --test --test-concurrency=1 tests/app-boot.integration.test.js",
+    "serve": "python3 -m http.server 8000",
+    "build": "esbuild js/app.js --bundle --format=iife --target=es2020 --outfile=app.bundle.js"
+  },
+  "author": "I. Roig — Universo 404",
+  "license": "MIT",
+  "devDependencies": {
+    "fake-indexeddb": "^6.2.5",
+    "jsdom": "^29.1.1",
+    "esbuild": "^0.28.1"
+  }
+}

@@ -1,0 +1,93 @@
+/* ENTIDAD 404 — base */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; font-size: calc(100% * var(--font-scale, 1)); }
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--bg-0);
+  color: var(--text-1);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Escalado de fuente configurable */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--sp-3);
+  font-weight: 600;
+}
+h1 { font-size: var(--fs-2xl); letter-spacing: 0.02em; }
+h2 { font-size: var(--fs-xl); }
+h3 { font-size: var(--fs-lg); }
+h4 { font-size: var(--fs-md); }
+
+p { margin: 0 0 var(--sp-3); }
+a { color: var(--accent); }
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: var(--sp-2);
+}
+
+.muted { color: var(--text-2); }
+.small { font-size: var(--fs-sm); }
+
+button, input, select, textarea { font: inherit; color: inherit; }
+
+img, svg, canvas { max-width: 100%; display: block; }
+
+/* Foco visible en todo el producto */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* Solo lectores de pantalla */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* Salto al contenido */
+.skip-link {
+  position: fixed; top: -100px; left: var(--sp-4);
+  background: var(--accent); color: var(--accent-contrast);
+  padding: var(--sp-2) var(--sp-4); border-radius: var(--radius-sm);
+  z-index: 100; transition: top var(--dur-fast) var(--ease-out);
+  font-family: var(--font-display); text-decoration: none;
+}
+.skip-link:focus { top: var(--sp-3); }
+
+/* Scrollbars discretos */
+* { scrollbar-width: thin; scrollbar-color: var(--panel-border) transparent; }
+
+/* Movimiento reducido: se anula toda animación no esencial */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+[data-motion="off"] *, [data-motion="off"] *::before, [data-motion="off"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+/* Desactivar glitch de forma independiente */
+[data-glitch="off"] .fx-glitch { animation: none !important; }
+[data-glitch="off"] .scanlines { display: none !important; }

@@ -1,0 +1,192 @@
+/* ============================================================
+   ENTIDAD 404 — Skins visuales
+   Cada tema redefine tokens completos: fondo, paneles, botones,
+   bordes, sombras, texto, brillos, hábitat y partículas.
+   ============================================================ */
+
+/* 1 · U404 OLED (predeterminado): definido en tokens.css */
+[data-theme="oled"] { color-scheme: dark; }
+
+/* 2 · Terminal verde */
+[data-theme="terminal"] {
+  color-scheme: dark;
+  --bg-0: #020604;
+  --bg-1: #04120a;
+  --panel: rgba(6, 26, 15, 0.85);
+  --panel-solid: #071c10;
+  --panel-border: rgba(74, 222, 128, 0.22);
+  --text-1: #d3f5dd;
+  --text-2: #7fbf93;
+  --text-3: #47795a;
+  --accent: #4ade80;
+  --accent-strong: #22c55e;
+  --accent-contrast: #04170b;
+  --accent-2: #a3e635;
+  --danger: #fb7185;
+  --warn: #facc15;
+  --ok: #4ade80;
+  --glow: rgba(74, 222, 128, 0.3);
+  --focus-ring: #86efac;
+  --habitat-sky: linear-gradient(180deg, #03130a 0%, #052012 60%, #07301c 100%);
+  --habitat-floor: #0a2415;
+  --scanline-opacity: 0.09;
+  --particle-color: rgba(74, 222, 128, 0.55);
+  --bar-track: rgba(74, 222, 128, 0.1);
+  --btn-bg: rgba(74, 222, 128, 0.06);
+  --btn-bg-hover: rgba(74, 222, 128, 0.14);
+}
+
+/* 3 · CRT ámbar */
+[data-theme="ambar"] {
+  color-scheme: dark;
+  --bg-0: #0a0502;
+  --bg-1: #170c03;
+  --panel: rgba(36, 20, 6, 0.85);
+  --panel-solid: #241406;
+  --panel-border: rgba(251, 191, 36, 0.22);
+  --text-1: #fde8c8;
+  --text-2: #d0a878;
+  --text-3: #8a6c48;
+  --accent: #fbbf24;
+  --accent-strong: #f59e0b;
+  --accent-contrast: #241300;
+  --accent-2: #fb923c;
+  --danger: #f87171;
+  --warn: #fbbf24;
+  --ok: #a3e635;
+  --glow: rgba(251, 191, 36, 0.28);
+  --focus-ring: #fcd34d;
+  --habitat-sky: linear-gradient(180deg, #160b02 0%, #241305 60%, #33200a 100%);
+  --habitat-floor: #291807;
+  --scanline-opacity: 0.1;
+  --particle-color: rgba(251, 191, 36, 0.5);
+  --bar-track: rgba(251, 191, 36, 0.1);
+  --btn-bg: rgba(251, 191, 36, 0.06);
+  --btn-bg-hover: rgba(251, 191, 36, 0.14);
+}
+
+/* 4 · Abismo azul */
+[data-theme="abismo"] {
+  color-scheme: dark;
+  --bg-0: #030614;
+  --bg-1: #060b21;
+  --panel: rgba(10, 18, 44, 0.84);
+  --panel-solid: #0a122c;
+  --panel-border: rgba(96, 165, 250, 0.2);
+  --text-1: #dbe7ff;
+  --text-2: #8fa5d0;
+  --text-3: #56658c;
+  --accent: #60a5fa;
+  --accent-strong: #3b82f6;
+  --accent-contrast: #041025;
+  --accent-2: #22d3ee;
+  --danger: #fb7185;
+  --warn: #fbbf24;
+  --ok: #34d399;
+  --glow: rgba(96, 165, 250, 0.3);
+  --focus-ring: #93c5fd;
+  --habitat-sky: linear-gradient(180deg, #040a1e 0%, #071236 60%, #0a1c4d 100%);
+  --habitat-floor: #0a1533;
+  --scanline-opacity: 0.04;
+  --particle-color: rgba(96, 165, 250, 0.55);
+  --bar-track: rgba(96, 165, 250, 0.1);
+  --btn-bg: rgba(96, 165, 250, 0.07);
+  --btn-bg-hover: rgba(96, 165, 250, 0.15);
+}
+
+/* 5 · Biolaboratorio */
+[data-theme="biolab"] {
+  color-scheme: dark;
+  --bg-0: #050a0a;
+  --bg-1: #0a1414;
+  --panel: rgba(14, 30, 30, 0.85);
+  --panel-solid: #0e1e1e;
+  --panel-border: rgba(52, 211, 153, 0.2);
+  --text-1: #e2f5ef;
+  --text-2: #94bfb2;
+  --text-3: #587a70;
+  --accent: #34d399;
+  --accent-strong: #10b981;
+  --accent-contrast: #032019;
+  --accent-2: #67e8f9;
+  --danger: #f87171;
+  --warn: #fbbf24;
+  --ok: #34d399;
+  --glow: rgba(52, 211, 153, 0.26);
+  --focus-ring: #6ee7b7;
+  --habitat-sky: linear-gradient(180deg, #06110f 0%, #0a1d1a 55%, #0f2b24 100%);
+  --habitat-floor: #0d211c;
+  --scanline-opacity: 0.05;
+  --particle-color: rgba(103, 232, 249, 0.5);
+  --bar-track: rgba(52, 211, 153, 0.1);
+  --btn-bg: rgba(52, 211, 153, 0.06);
+  --btn-bg-hover: rgba(52, 211, 153, 0.14);
+}
+
+/* 6 · Cyber-noir */
+[data-theme="noir"] {
+  color-scheme: dark;
+  --bg-0: #08060c;
+  --bg-1: #100b18;
+  --panel: rgba(26, 18, 40, 0.84);
+  --panel-solid: #1a1228;
+  --panel-border: rgba(196, 145, 255, 0.2);
+  --text-1: #ece4f8;
+  --text-2: #a795c4;
+  --text-3: #6a5c85;
+  --accent: #c084fc;
+  --accent-strong: #a855f7;
+  --accent-contrast: #1d0930;
+  --accent-2: #f472b6;
+  --danger: #fb7185;
+  --warn: #fbbf24;
+  --ok: #4ade80;
+  --glow: rgba(192, 132, 252, 0.28);
+  --focus-ring: #d8b4fe;
+  --habitat-sky: linear-gradient(180deg, #0c0715 0%, #170e2b 60%, #221542 100%);
+  --habitat-floor: #191030;
+  --scanline-opacity: 0.06;
+  --particle-color: rgba(244, 114, 182, 0.45);
+  --bar-track: rgba(192, 132, 252, 0.1);
+  --btn-bg: rgba(192, 132, 252, 0.07);
+  --btn-bg-hover: rgba(192, 132, 252, 0.15);
+}
+
+/* 7 · Minimal oscuro */
+[data-theme="minimal"] {
+  color-scheme: dark;
+  --bg-0: #0d0e10;
+  --bg-1: #131417;
+  --panel: rgba(28, 30, 34, 0.9);
+  --panel-solid: #1c1e22;
+  --panel-border: rgba(255, 255, 255, 0.1);
+  --text-1: #f0f1f3;
+  --text-2: #a3a7ae;
+  --text-3: #6a6e76;
+  --accent: #e2e4e9;
+  --accent-strong: #ffffff;
+  --accent-contrast: #17181b;
+  --accent-2: #9ca3af;
+  --danger: #f87171;
+  --warn: #fbbf24;
+  --ok: #4ade80;
+  --glow: rgba(255, 255, 255, 0.12);
+  --focus-ring: #ffffff;
+  --habitat-sky: linear-gradient(180deg, #101114 0%, #16181c 60%, #1c1f24 100%);
+  --habitat-floor: #191b1f;
+  --scanline-opacity: 0;
+  --particle-color: rgba(255, 255, 255, 0.25);
+  --bar-track: rgba(255,255,255,0.08);
+  --btn-bg: rgba(255,255,255,0.05);
+  --btn-bg-hover: rgba(255,255,255,0.1);
+}
+
+/* Modo alto contraste (accesibilidad, combinable con cualquier tema) */
+[data-contrast="high"] {
+  --text-1: #ffffff;
+  --text-2: #d7dce4;
+  --text-3: #aab2bf;
+  --panel-border: rgba(255,255,255,0.42);
+  --bar-track: rgba(255,255,255,0.18);
+  --scanline-opacity: 0;
+}
